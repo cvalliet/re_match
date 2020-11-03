@@ -8,4 +8,5 @@ $ re_match "^\w+$" "word"
 # Regular Expressions samples
 
 "^\W*$" : ligne vide ou avec des blancs
+
 "^$"    : ligne vide uniquement
