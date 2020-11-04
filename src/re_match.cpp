@@ -4,19 +4,24 @@
 
 inline bool test_match(const std::string& expression, const std::string& text)
 {
-    return std::regex_match(text, std::regex(expression));
+    std::smatch sm;
+    
+    if (std::regex_match(text, sm, std::regex(expression))) {
+        std::cout << "Match!\n";
+
+        for (auto s: sm)
+            std::cout << "[" << s << "]\n";
+        
+        return true;
+    }
+    
+    return false;
 }
 
 int main(int argc, char * argv[])
 {
-    if (3 == argc) {
-        bool result = test_match(argv[1], argv[2]);
-
-        if (result)
-            std::cout << "Match!\n";
-
-        return (result)? EXIT_SUCCESS: EXIT_FAILURE;
-    }
+    if (3 == argc)
+        return (test_match(argv[1], argv[2]))? EXIT_SUCCESS: EXIT_FAILURE;
 
     std::cerr <<
         "\n"
