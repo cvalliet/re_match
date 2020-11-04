@@ -7,7 +7,7 @@ inline bool test_match(const std::string& expression, const std::string& text)
     std::smatch sm;
     
     if (std::regex_match(text, sm, std::regex(expression))) {
-        std::cout << "Match!\n";
+        std::cout << "Text matches -> ";
 
         for (auto s: sm)
             std::cout << "[" << s << "]\n";
