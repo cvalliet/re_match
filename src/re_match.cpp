@@ -24,9 +24,7 @@ int main(int argc, char * argv[])
         return (test_match(argv[1], argv[2]))? EXIT_SUCCESS: EXIT_FAILURE;
 
     std::cerr <<
-        "\n"
         "Usage:\n"
-        "\n"
         " re_match <regular expression> <text to evaluate>\n"
         "\n"
         " Check if the regular expression matches with the given text.\n"
